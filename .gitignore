@@ -1,0 +1,16 @@
+# KiCad temporary and backup files
+*.lck
+~*.lck
+*.kicad_prl
+*-backups/
+_autosave-*
+fp-info-cache
+
+# Local environments and generated Python caches
+.venv/
+__pycache__/
+*.pyc
+
+# Operating system files
+.DS_Store
+Thumbs.db
