@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Duet") (type "KiCad") (uri "${KIPRJMOD}/Duet.pretty") (options "") (descr "Duet-MIDI touch pads"))
+  (lib (name "Hackclub Footprints") (type "KiCad") (uri "${KIPRJMOD}/libraries/Hackclub.pretty") (options "") (descr "Waveshare footprint from Hackclub KiCad Libraries"))
+)

@@ -1,0 +1,5 @@
+(version 1)
+
+(rule "Recortes internos de LEDs"
+  (condition "A.memberOfFootprint('D*') && B.memberOfFootprint('D*')")
+  (constraint edge_clearance (min 0.20mm)))

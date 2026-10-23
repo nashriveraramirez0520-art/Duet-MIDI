@@ -1,80 +1,64 @@
 # Duet-MIDI
 
-A dual-mode USB MIDI controller for melodies and drum pads, designed for **Hack Club Half Life — Week 3: Music**.
+I wanted to make something I could use to play both melodies and drums without needing two separate controllers. That is where Duet-MIDI started: eight touch pads, two modes, and a few extra controls to make it more fun to play.
 
-**Status: concept and project setup.** Hardware selection, schematic, PCB layout, enclosure, and firmware are still in development. No hardware has been built or tested.
+This is my project for **Hack Club Half Life, Week 3: Music**. The schematic and PCB layout are now finished, and I have exported and checked the Gerbers. I still need to build it and write the firmware, so the pictures below are from KiCad, not a working prototype.
 
-## The idea
+![Duet-MIDI front view in KiCad](docs/images/pcb-front-3d.png)
 
-Duet-MIDI will use the same eight capacitive touch pads in two modes:
+## What I want it to do
 
-- **Melody mode:** play a scale and shift the octave with dedicated buttons.
-- **Drum mode:** trigger eight percussion sounds in a connected music application.
+In melody mode, the eight pads will play notes from a scale, with buttons to move up or down an octave. In drum mode, the same pads will trigger different drum sounds. I added a mode button so I can switch between them instead of having to choose just one idea.
 
-A mode button will switch the pad mapping, with RGB feedback indicating the active mode. An encoder and a slider will provide additional MIDI controls.
+There is also a slider, a rotary encoder with a push switch, and a function button. Their exact MIDI assignments are still something I need to work out in the firmware. Eight RGB LEDs will give feedback for the mode and the pads being played.
 
-Duet-MIDI is a controller, not a standalone synthesizer. A computer running a software instrument or drum sampler will generate the sound.
+It will connect to a computer over USB for both power and MIDI. The sound will come from a software instrument or drum sampler on the computer.
 
-## Planned controls
+## The board
 
-| Control | Quantity | Intended function |
-| --- | --- | --- |
-| Capacitive touch pad | 8 | Play notes or trigger drum sounds |
-| Mechanical button | 4 | Mode, octave down, octave up, and one assignable function |
-| Rotary encoder | 1 | Adjust an assignable MIDI control |
-| Slide potentiometer | 1 | Send an assignable continuous MIDI control |
-| RGB lighting | TBD | Indicate the active mode and pad activity |
-| USB connection | 1 | MIDI data and power |
+The PCB is **100 × 91.75 mm**, with two copper layers and four M2 mounting holes. I kept the touch pads in two rows of four, put the slider on the left, and placed the other controls below the pads. The RGB LEDs sit on the back and shine through eight openings near the top.
 
-These are design targets, not a finalized parts list. Touch input will initially use fixed, adjustable note velocity; pressure-sensitive playing is outside the initial scope.
-
-## Intended operation
-
-1. Connect the controller to a computer using a USB data cable.
-2. Select Duet-MIDI as a MIDI input in compatible music software.
-3. Load a software instrument or drum sampler.
-4. Choose melody or drum mode and play the pads.
-5. Use the octave buttons, encoder, and slider to adjust the performance.
-
-This workflow is planned and has not yet been verified on a device.
-
-## Design approach
-
-- Design the schematic and PCB in **KiCad**.
-- Verify the microcontroller's native USB MIDI support, exposed touch-capable GPIOs, ADC inputs, and pin budget before wiring.
-- Match component footprints to the exact parts selected for purchase.
-- Keep touch sensing and RGB power requirements in mind during layout.
-- Design a separate enclosure in **Onshape** after the PCB dimensions and control positions are established.
-- Implement and test basic USB MIDI first, followed by touch calibration, both modes, controls, and lighting.
-
-## Repository
-
-| Location | Contents |
+| Part | What it does |
 | --- | --- |
-| [pcb/](pcb/) | KiCad source and future manufacturing exports |
-| [firmware/](firmware/) | Firmware plan and future source code |
-| [cad/](cad/) | Enclosure CAD and future printable exports |
-| [docs/design-plan.md](docs/design-plan.md) | Scope, initial behavior, and decisions to resolve |
-| [docs/images/](docs/images/) | Future progress screenshots and renders |
-| [JOURNAL.md](JOURNAL.md) | Development journal |
-| [BOM.csv](BOM.csv) | Parts-list template; sourcing is not complete |
+| Waveshare ESP32-S3-Zero | USB connection and main controller |
+| 8 capacitive touch pads | Note and drum inputs |
+| MCP23008 | Reads the four buttons and the encoder push switch |
+| Rotary encoder and 10 kΩ slider | Additional MIDI controls |
+| 8 SK6812MINI-E RGB LEDs | Visual feedback |
+| 74AHCT125 | Converts the RGB data signal from 3.3 V to 5 V |
 
-## Milestones
+![Duet-MIDI schematic](docs/images/schematic.png)
 
-- [x] Define the dual-mode concept.
-- [x] Create the repository and documentation structure.
-- [ ] Choose the controller board and verify a feasible pin assignment.
-- [ ] Select exact controls and prepare the component budget.
-- [ ] Complete the schematic and review electrical rule checks.
-- [ ] Create the touch-pad footprints and complete PCB routing.
-- [ ] Review design rule checks and manufacturing constraints.
-- [ ] Prepare initial firmware and document the build environment.
-- [ ] Design the enclosure and check component access.
-- [ ] Export manufacturing files and finalize the BOM.
-- [ ] Assemble the hardware and test with music software.
+## Getting the layout finished
 
-## Reference and attribution
+Routing took a lot of small fixes. I had to work around the touch pads, connect the LEDs in the right order, and keep checking the remaining unconnected items as I went. Eventually the routing check reached zero violations and zero unconnected items with schematic parity turned off. That was a really nice point to reach after seeing the list slowly go down.
 
-The starting reference is [Kai Pereira's MIDI Keypad tutorial](https://github.com/KaiPereira/MIDI-Keypad). Duet-MIDI will develop its own layout, two-mode interaction, and enclosure. Any reused source files or libraries will retain their applicable attribution and license notices.
+I then moved the reference text that was outside the board, added the control labels, and checked the exported copper, outline, and drill layers in Gerber Viewer.
+
+![PCB layout](docs/images/pcb-layout.png)
+
+[Routing check screenshot](docs/images/routing-drc.png) · [Back view](docs/images/pcb-back-3d.png)
+
+The routing screenshot is from before the final text cleanup. Five DRC checks were disabled in that run; the details and the remaining manufacturing checks are in [pcb/README.md](pcb/README.md). The electrical behavior still needs to be tested on real hardware.
+
+## Files
+
+- [KiCad project](pcb/Duet-MIDI.kicad_pro), [schematic](pcb/Duet-MIDI.kicad_sch), and [PCB](pcb/Duet-MIDI.kicad_pcb).
+- [Gerber ZIP](pcb/Duet-MIDI-Gerbers.zip) and [individual manufacturing files](pcb/gerbers/).
+- [PCB notes and library setup](pcb/README.md).
+- [Firmware plan](firmware/), [enclosure folder](cad/), and [development journal](JOURNAL.md).
+- [BOM](BOM.csv), which is still a template while I finish choosing the exact parts and suppliers.
+
+To open the design, download the repository and open `pcb/Duet-MIDI.kicad_pro` in **KiCad 10**. The custom touch-pad footprint and the Hack Club libraries used by the design are included with project-relative paths.
+
+## What is next
+
+The next steps are to finish the parts list, confirm the manufacturing limits, design the enclosure, and write the firmware. After assembly, I will need to test USB MIDI, calibrate the touch pads, and check the buttons, slider, encoder, and lighting together.
+
+One thing still to confirm before ordering is the **0.20 mm copper clearance around the internal LED cutouts**. The LED brightness and USB power budget also need to be handled before running the assembled board.
+
+## References
+
+I started from [Kai Pereira's MIDI Keypad guide](https://github.com/KaiPereira/MIDI-Keypad) and developed this layout around the two-mode idea and the extra controls. The Waveshare symbol and footprint come from [Hackclub KiCad Libraries](https://github.com/KaiPereira/Hackclub-KiCad-Libraries); see [the attribution notes](pcb/libraries/README.md).
 
 Project by **Nash Andrés Rivera Ramírez**.

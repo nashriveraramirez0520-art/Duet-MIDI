@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Hackclub Symbols") (type "KiCad") (uri "${KIPRJMOD}/libraries/Hackclub Symbols.kicad_sym") (options "") (descr "Hackclub KiCad Libraries"))
+)

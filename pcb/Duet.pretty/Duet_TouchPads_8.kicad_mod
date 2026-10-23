@@ -1,0 +1,127 @@
+(footprint "Duet_TouchPads_8"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dce6e5ba-0520-4dfc-bb86-1e234917b657")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "81d47f19-3d97-4c3c-8036-875da1c50ac5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Duet_TouchPads_8"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "0c10dc97-1c70-438b-b5bb-c38b3d7725b1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "c533820b-7e2e-4f75-9f62-8a6f91386a09")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "88ff76bd-e9b7-4366-847f-1cae20d980f8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at 0 0)
+		(size 15 15)
+		(layers "F.Cu")
+		(roundrect_rratio 0.2)
+		(uuid "9d504a52-7812-42cd-b8f6-d2b316c59dd9")
+	)
+	(pad "2" smd roundrect
+		(at 20 0)
+		(size 15 15)
+		(layers "F.Cu")
+		(roundrect_rratio 0.2)
+		(uuid "57ff15df-d14f-4fb9-965a-3b9266edca0e")
+	)
+	(pad "3" smd roundrect
+		(at 40 0)
+		(size 15 15)
+		(layers "F.Cu")
+		(roundrect_rratio 0.2)
+		(uuid "d9e518d7-616b-482a-a8cd-27a095b300ce")
+	)
+	(pad "4" smd roundrect
+		(at 60 0)
+		(size 15 15)
+		(layers "F.Cu")
+		(roundrect_rratio 0.2)
+		(uuid "5ba3be69-e995-46da-806b-74046ffc5c91")
+	)
+	(pad "5" smd roundrect
+		(at 0 20)
+		(size 15 15)
+		(layers "F.Cu")
+		(roundrect_rratio 0.2)
+		(uuid "27fc438f-734c-4fcb-ade4-6a60668b77fa")
+	)
+	(pad "6" smd roundrect
+		(at 20 20)
+		(size 15 15)
+		(layers "F.Cu")
+		(roundrect_rratio 0.2)
+		(uuid "dce66174-5f89-4484-971a-4493cde8bc40")
+	)
+	(pad "7" smd roundrect
+		(at 40 20)
+		(size 15 15)
+		(layers "F.Cu")
+		(roundrect_rratio 0.2)
+		(uuid "971268fb-423b-441e-bd22-70e2ca63d59e")
+	)
+	(pad "8" smd roundrect
+		(at 60 20)
+		(size 15 15)
+		(layers "F.Cu")
+		(roundrect_rratio 0.2)
+		(uuid "12d15cdd-cc9f-4fb8-b653-6aa25fe21491")
+	)
+	(embedded_fonts no)
+)
