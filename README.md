@@ -2,7 +2,7 @@
 
 I wanted to make something I could use to play both melodies and drums without needing two separate controllers. That is where Duet-MIDI started: eight touch pads, two modes, and a few extra controls to make it more fun to play.
 
-This is my project for **Hack Club Half Life, Week 3: Music**. The schematic and PCB layout are finished, the Gerbers have been exported and checked, and the first enclosure version is modeled in Onshape. I still need to print it, build the board, and write the firmware, so the pictures below are from KiCad, not a working prototype.
+This is my project for **Hack Club Half Life, Week 3: Music**. The schematic and PCB layout are finished, the Gerbers have been exported and checked, and the first enclosure version is modeled in Onshape. I have also prepared a first CircuitPython firmware version. I still need to print it, build the board, and test the firmware, so the pictures below are from KiCad, not a working prototype.
 
 ![Duet-MIDI front view in KiCad](docs/images/pcb-front-3d.png)
 
@@ -54,14 +54,18 @@ I had to lower the ESP32 mounting height to keep the case even across the top. I
 - [KiCad project](pcb/Duet-MIDI.kicad_pro), [schematic](pcb/Duet-MIDI.kicad_sch), and [PCB](pcb/Duet-MIDI.kicad_pcb).
 - [Gerber ZIP](pcb/Duet-MIDI-Gerbers.zip) and [individual manufacturing files](pcb/gerbers/).
 - [PCB notes and library setup](pcb/README.md).
-- [Firmware plan](firmware/), [enclosure V1](cad/), and [development journal](JOURNAL.md).
-- [BOM](BOM.csv), which is still a template while I finish choosing the exact parts and suppliers.
+- [CircuitPython firmware V1](firmware/), [enclosure V1](cad/), and [development journal](JOURNAL.md).
+- [BOM draft](BOM.csv), with quantities extracted from the PCB. Exact parts, suppliers and prices are still pending; see [BOM notes](docs/BOM-notes.md).
 
 To open the design, download the repository and open `pcb/Duet-MIDI.kicad_pro` in **KiCad 10**. The custom touch-pad footprint and the Hack Club libraries used by the design are included with project-relative paths.
 
+## Firmware progress
+
+The first CircuitPython version now includes both pad modes, octave buttons, a panic button, slider modulation, encoder volume with push-to-reset, and RGB feedback. Desktop tests cover the note and control logic, but I have not tested USB MIDI or any of the physical controls on the board yet. Touch thresholds, encoder settings, lighting and power use still need checking.
+
 ## What is next
 
-The next steps are to finish the parts list, confirm the manufacturing limits, print and fit-test enclosure V1, and write the firmware. After assembly, I will need to test USB MIDI, calibrate the touch pads, and check the buttons, slider, encoder, and lighting together.
+The next steps are to finish the parts list, confirm the manufacturing limits, print and fit-test enclosure V1, and test the first firmware version on hardware. After assembly, I will need to test USB MIDI, calibrate the touch pads, and check the buttons, slider, encoder, and lighting together.
 
 One thing still to confirm before ordering is the **0.20 mm copper clearance around the internal LED cutouts**. The LED brightness and USB power budget also need to be handled before running the assembled board.
 

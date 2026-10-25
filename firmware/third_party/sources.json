@@ -1,0 +1,18 @@
+[
+  {
+    "repository": "https://github.com/adafruit/Adafruit_CircuitPython_MCP230xx",
+    "commit": "8a951eff76137ad1994c4838e5f151e348087941"
+  },
+  {
+    "repository": "https://github.com/adafruit/Adafruit_CircuitPython_BusDevice",
+    "commit": "686728c7b11eb0b7ffb62691b68ccead413e7cc5"
+  },
+  {
+    "repository": "https://github.com/adafruit/Adafruit_CircuitPython_Register",
+    "commit": "04051d28e3eceb13d2705471f67810641121f52d"
+  },
+  {
+    "repository": "https://github.com/adafruit/Adafruit_CircuitPython_NeoPixel",
+    "commit": "aa82c0724ccb68fbd94605c9f4f09b19c5d2919d"
+  }
+]
