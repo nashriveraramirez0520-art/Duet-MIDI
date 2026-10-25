@@ -1,0 +1,85 @@
+{
+  "status": "CAD checks only; physical fit untested",
+  "parts": [
+    {
+      "part": "Bottom Case",
+      "triangles": 74056,
+      "closed_mesh": true,
+      "dimensions_mm": [
+        105.0,
+        96.75,
+        18.502
+      ]
+    },
+    {
+      "part": "Top Cover",
+      "triangles": 48532,
+      "closed_mesh": true,
+      "dimensions_mm": [
+        105.0,
+        96.75,
+        9.902
+      ]
+    },
+    {
+      "part": "Button 1",
+      "triangles": 9572,
+      "closed_mesh": true,
+      "dimensions_mm": [
+        8.002,
+        8.0,
+        6.402
+      ]
+    },
+    {
+      "part": "Button 2",
+      "triangles": 9572,
+      "closed_mesh": true,
+      "dimensions_mm": [
+        8.002,
+        8.0,
+        6.402
+      ]
+    },
+    {
+      "part": "Button 3",
+      "triangles": 9572,
+      "closed_mesh": true,
+      "dimensions_mm": [
+        8.002,
+        8.0,
+        6.402
+      ]
+    },
+    {
+      "part": "Button 4",
+      "triangles": 9572,
+      "closed_mesh": true,
+      "dimensions_mm": [
+        8.002,
+        8.0,
+        6.402
+      ]
+    },
+    {
+      "part": "Encoder Knob",
+      "triangles": 9962,
+      "closed_mesh": true,
+      "dimensions_mm": [
+        18.006,
+        18.001,
+        13.006
+      ]
+    },
+    {
+      "part": "Slider Cap",
+      "triangles": 8988,
+      "closed_mesh": true,
+      "dimensions_mm": [
+        10.002,
+        14.002,
+        8.001
+      ]
+    }
+  ]
+}

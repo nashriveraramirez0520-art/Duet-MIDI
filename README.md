@@ -2,7 +2,7 @@
 
 I wanted to make something I could use to play both melodies and drums without needing two separate controllers. That is where Duet-MIDI started: eight touch pads, two modes, and a few extra controls to make it more fun to play.
 
-This is my project for **Hack Club Half Life, Week 3: Music**. The schematic and PCB layout are now finished, and I have exported and checked the Gerbers. I still need to build it and write the firmware, so the pictures below are from KiCad, not a working prototype.
+This is my project for **Hack Club Half Life, Week 3: Music**. The schematic and PCB layout are finished, the Gerbers have been exported and checked, and the first enclosure version is modeled in Onshape. I still need to print it, build the board, and write the firmware, so the pictures below are from KiCad, not a working prototype.
 
 ![Duet-MIDI front view in KiCad](docs/images/pcb-front-3d.png)
 
@@ -41,19 +41,27 @@ I then moved the reference text that was outside the board, added the control la
 
 The routing screenshot is from before the final text cleanup. Five DRC checks were disabled in that run; the details and the remaining manufacturing checks are in [pcb/README.md](pcb/README.md). The electrical behavior still needs to be tested on real hardware.
 
+## The enclosure
+
+I wanted a case I could open again, with the touch area accessible and a window underneath to show part of the PCB. V1 has a separate lid, four button extensions, a knob for the encoder, and a grip for the slider. The lid uses the same four M2 mounting positions as the board.
+
+I had to lower the ESP32 mounting height to keep the case even across the top. I also adjusted the small control sockets and checked the slider at the center and both ends. The next step is a real fit test, starting with the small pieces before printing the whole enclosure.
+
+[Enclosure files and assembly notes](cad/README.md) — includes individual STEP and STL parts plus a reference assembly. The bottom window is designed for separate 1 mm acrylic.
+
 ## Files
 
 - [KiCad project](pcb/Duet-MIDI.kicad_pro), [schematic](pcb/Duet-MIDI.kicad_sch), and [PCB](pcb/Duet-MIDI.kicad_pcb).
 - [Gerber ZIP](pcb/Duet-MIDI-Gerbers.zip) and [individual manufacturing files](pcb/gerbers/).
 - [PCB notes and library setup](pcb/README.md).
-- [Firmware plan](firmware/), [enclosure folder](cad/), and [development journal](JOURNAL.md).
+- [Firmware plan](firmware/), [enclosure V1](cad/), and [development journal](JOURNAL.md).
 - [BOM](BOM.csv), which is still a template while I finish choosing the exact parts and suppliers.
 
 To open the design, download the repository and open `pcb/Duet-MIDI.kicad_pro` in **KiCad 10**. The custom touch-pad footprint and the Hack Club libraries used by the design are included with project-relative paths.
 
 ## What is next
 
-The next steps are to finish the parts list, confirm the manufacturing limits, design the enclosure, and write the firmware. After assembly, I will need to test USB MIDI, calibrate the touch pads, and check the buttons, slider, encoder, and lighting together.
+The next steps are to finish the parts list, confirm the manufacturing limits, print and fit-test enclosure V1, and write the firmware. After assembly, I will need to test USB MIDI, calibrate the touch pads, and check the buttons, slider, encoder, and lighting together.
 
 One thing still to confirm before ordering is the **0.20 mm copper clearance around the internal LED cutouts**. The LED brightness and USB power budget also need to be handled before running the assembled board.
 
