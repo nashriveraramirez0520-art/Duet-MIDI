@@ -69,6 +69,9 @@ The next steps are to finish the parts list, confirm the manufacturing limits, p
 
 One thing still to confirm before ordering is the **0.20 mm copper clearance around the internal LED cutouts**. The LED brightness and USB power budget also need to be handled before running the assembled board.
 
+## Editable CAD Source(Onshape)
+https://cad.onshape.com/documents/5af46204eeb29ad0fa03019d/w/52b0aef6fb09ac80a2bff0bc/e/92c0bc1531caa20fbf243b4c?renderMode=0&uiState=6ade9d325837a28337909538
+
 ## References
 
 I started from [Kai Pereira's MIDI Keypad guide](https://github.com/KaiPereira/MIDI-Keypad) and developed this layout around the two-mode idea and the extra controls. The Waveshare symbol and footprint come from [Hackclub KiCad Libraries](https://github.com/KaiPereira/Hackclub-KiCad-Libraries); see [the attribution notes](pcb/libraries/README.md).
