@@ -72,6 +72,9 @@ One thing still to confirm before ordering is the **0.20 mm copper clearance aro
 ## Editable CAD Source(Onshape)
 https://cad.onshape.com/documents/5af46204eeb29ad0fa03019d/w/52b0aef6fb09ac80a2bff0bc/e/92c0bc1531caa20fbf243b4c?renderMode=0&uiState=6ade9d325837a28337909538
 
+<img width="1029" height="710" alt="Screenshot 2026-10-25 201626" src="https://github.com/user-attachments/assets/fafc62eb-acec-4fce-a4a5-3ba2a76e1152" />
+
+
 ## References
 
 I started from [Kai Pereira's MIDI Keypad guide](https://github.com/KaiPereira/MIDI-Keypad) and developed this layout around the two-mode idea and the extra controls. The Waveshare symbol and footprint come from [Hackclub KiCad Libraries](https://github.com/KaiPereira/Hackclub-KiCad-Libraries); see [the attribution notes](pcb/libraries/README.md).
